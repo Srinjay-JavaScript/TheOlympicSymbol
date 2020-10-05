@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title> Olympics </title>
+     <link rel="shortcut icon" href="olympicSymbol.png" type="image/x-icon">
+     <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
+  </head>
+
+    <body style="background-image: url(gradientLight-Blue.jpg); background-size: cover; background-position: center;">
+        <center>
+        <h1 style=" color: white; font-weight: 700; font-family: 'Cutive', serif;"> The Olympic Symbol </h1>
+        <canvas id="OlympicCanvas" width="800" height="600" style="color: azure; border-width: 10px; border-style: solid;"></canvas>
+        </center>
+
+        <script>
+            //Creating a variable and assigning it with "OlympicSymbol" (Canvas)
+            canvas = document.getElementById("OlympicCanvas");
+            ctx = canvas.getContext("2d");
+            var colorArray = ["blue", "black", "red", "yellow", "rgb(25, 189, 25)"];
+            var xPosition = [250, 400, 550, 320, 475];
+            var yPosition = [250, 250, 250, 300, 300];
+
+            // for loop for drawing the 5 circles in the olympic symbol
+            for (i=0; i<5; i++) {
+                ctx.beginPath();
+                ctx.strokeStyle = colorArray[i];
+                ctx.lineWidth = 10;
+                ctx.arc(xPosition[i], yPosition[i], 60, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+        </script>
+    </body>
+</html>
